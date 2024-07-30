@@ -4,6 +4,12 @@
         <element label="Quantity" max_length="40" name="quantity" type="integer"/>
         <element attributes="edge_encryption_enabled=true" display="true" label="Item" mandatory="true" max_length="125" name="item" type="string"/>
         <element attributes="encode_utf8=false" label="Requester" mandatory="true" max_length="32" name="requester" reference="sys_user" type="reference"/>
+        <element choice="3" default="nice_to_have" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Nice to have" value="nice_to_have"/>
+                <element inactive_on_update="false" label="Must have" value="must_have"/>
+            </choice>
+        </element>
         <element label="URL" max_length="1024" name="url" type="url"/>
         <index name="index">
             <element name="requester"/>
